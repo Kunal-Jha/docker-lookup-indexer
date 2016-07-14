@@ -1,0 +1,9 @@
+FROM kunaljha/indexer_base
+
+ADD 2015-04 /app/lookup/index/2015-04
+ADD Dataset_de /app/lookup/dataset
+ADD run_de.sh /app/lookup/index.sh
+RUN chmod a+x /app/lookup/index.sh
+
+# define default command as run server
+CMD ["./index.sh"]
